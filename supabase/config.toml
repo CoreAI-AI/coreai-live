@@ -1,0 +1,19 @@
+project_id = "pdtlaefhgtvzwkckqxom"
+
+[functions.ai]
+verify_jwt = true
+
+[functions.create-demo-user]
+verify_jwt = false
+
+[functions.document-summarize]
+verify_jwt = true
+
+[functions.local-image-gen]
+verify_jwt = true
+
+[functions.image-edit]
+verify_jwt = true
+
+[functions.style-transform]
+verify_jwt = true

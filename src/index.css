@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shake animation for wrong PIN */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* CoreAI Premium Design System - World-Class Theme
+   Inspired by: ChatGPT elegance + Perplexity clarity + Gemini vibrancy
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* CoreAI Light Theme - Premium Clean */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 217 91% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+    --radius: 0.75rem;
+    
+    /* Sidebar */
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 217 91% 60%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Chat bubbles */
+    --chat-user-bg: 217 91% 60%;
+    --chat-user-fg: 0 0% 100%;
+    --chat-ai-bg: 210 40% 96%;
+    --chat-ai-fg: 222 47% 11%;
+    
+    /* CoreAI Premium Tokens */
+    --core-gradient-start: 217 91% 60%;
+    --core-gradient-end: 271 91% 65%;
+    --core-glow: 217 91% 60%;
+    --core-success: 142 76% 36%;
+    --core-warning: 38 92% 50%;
+    
+    /* Charts */
+    --chart-1: 217 91% 60%;
+    --chart-2: 271 91% 65%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 346 77% 49%;
+    
+    /* Typography */
+    --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+    
+    /* Premium Shadows */
+    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.03);
+    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.04);
+    --shadow-sm: 0 2px 4px -1px hsl(0 0% 0% / 0.06), 0 1px 2px -1px hsl(0 0% 0% / 0.03);
+    --shadow-md: 0 4px 6px -2px hsl(0 0% 0% / 0.05), 0 2px 4px -2px hsl(0 0% 0% / 0.03);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.08), 0 4px 6px -4px hsl(0 0% 0% / 0.03);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.04);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
+  }
+
+  .dark {
+    /* CoreAI Dark Theme - Premium Sophisticated with Better Contrast */
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 217 33% 14%;
+    --accent-foreground: 217 91% 70%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 14%;
+    --input: 217 33% 16%;
+    --ring: 217 91% 60%;
+    
+    /* Sidebar - Slightly darker for depth */
+    --sidebar-background: 222 47% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 14%;
+    --sidebar-accent-foreground: 217 91% 70%;
+    --sidebar-border: 217 33% 12%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Chat bubbles - Subtle gradient effect */
+    --chat-user-bg: 217 91% 55%;
+    --chat-user-fg: 0 0% 100%;
+    --chat-ai-bg: 222 47% 10%;
+    --chat-ai-fg: 210 40% 95%;
+    
+    /* CoreAI Premium Tokens */
+    --core-gradient-start: 217 91% 60%;
+    --core-gradient-end: 271 91% 65%;
+    --core-glow: 217 91% 60%;
+    --core-success: 142 71% 45%;
+    --core-warning: 38 92% 50%;
+    
+    /* Charts */
+    --chart-1: 217 91% 65%;
+    --chart-2: 271 91% 70%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 55%;
+    --chart-5: 346 77% 55%;
+    
+    /* Premium Shadows with Glow */
+    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.15);
+    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.2);
+    --shadow-sm: 0 2px 4px -1px hsl(0 0% 0% / 0.25), 0 1px 2px -1px hsl(0 0% 0% / 0.15);
+    --shadow-md: 0 4px 6px -2px hsl(0 0% 0% / 0.3), 0 2px 4px -2px hsl(0 0% 0% / 0.2);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.35), 0 4px 6px -4px hsl(0 0% 0% / 0.2);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 8px 10px -6px hsl(0 0% 0% / 0.25);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.55);
+    
+    /* Input glow on focus */
+    --input-glow: 0 0 0 3px hsl(217 91% 60% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Premium focus states */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-background transition-shadow duration-200;
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: hsl(217 91% 60% / 0.25);
+    color: inherit;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Hide scrollbar for mobile */
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@layer utilities {
+  /* Premium gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--core-gradient-start)) 0%, hsl(var(--core-gradient-end)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Premium gradient background */
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--core-gradient-start)) 0%, hsl(var(--core-gradient-end)) 100%);
+  }
+
+  /* Subtle gradient background */
+  .gradient-subtle {
+    background: linear-gradient(135deg, hsl(var(--core-gradient-start) / 0.1) 0%, hsl(var(--core-gradient-end) / 0.1) 100%);
+  }
+
+  /* Premium glow effect */
+  .core-glow {
+    box-shadow: 0 0 40px hsl(var(--core-glow) / 0.25), 0 0 80px hsl(var(--core-glow) / 0.1);
+  }
+
+  .core-glow-sm {
+    box-shadow: 0 0 20px hsl(var(--core-glow) / 0.2), 0 0 40px hsl(var(--core-glow) / 0.05);
+  }
+
+  /* Glass morphism - Premium */
+  .glass-effect {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glass-effect-strong {
+    background: hsl(var(--card) / 0.95);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Hover lift animation - Premium */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Button press effect */
+  .btn-press {
+    @apply active:scale-[0.98] transition-all duration-150 ease-out;
+  }
+
+  /* Premium skeleton shimmer */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted) / 0.6) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Pulse glow animation */
+  .animate-pulse-glow {
+    animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--core-glow) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 50px hsl(var(--core-glow) / 0.5);
+    }
+  }
+
+  /* Input glow on typing */
+  .input-glow-typing {
+    animation: input-typing-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes input-typing-glow {
+    0%, 100% {
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 25px hsl(var(--primary) / 0.4);
+    }
+  }
+
+  /* Subtle gradient on message bubbles */
+  .chat-bubble-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--chat-ai-bg)) 0%,
+      hsl(var(--chat-ai-bg) / 0.95) 100%
+    );
+  }
+
+  .chat-bubble-user-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--core-gradient-end)) 100%
+    );
+  }
+
+  /* Smooth transition for theme changes */
+  .theme-transition * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in from bottom */
+  .animate-slide-up {
+    animation: slide-up 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scale in animation */
+  .animate-scale-in {
+    animation: scale-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Border width for blockquotes */
+  .border-l-3 {
+    border-left-width: 3px;
+  }
+
+  /* Premium input focus */
+  .input-focus-ring {
+    @apply transition-all duration-200;
+  }
+
+  .input-focus-ring:focus {
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.15);
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Typing indicator dots */
+  .typing-dot {
+    animation: typing-bounce 1.4s ease-in-out infinite;
+  }
+
+  .typing-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typing-bounce {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Mobile viewport height fix for iOS/Android keyboard */
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* ===== ChatGPT-Style Mobile Chat Layout ===== */
+  
+  /* Mobile chat container - fixed three sections */
+  .chat-layout-mobile {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    height: 100vh; /* Fallback */
+    overflow: hidden;
+  }
+
+  /* Scrollable message area - ONLY this scrolls */
+  .chat-messages-container {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    scroll-behavior: smooth;
+  }
+
+  /* Fixed input bar at bottom */
+  .chat-input-fixed {
+    flex-shrink: 0;
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+    background: hsl(var(--background));
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  /* Mobile-specific chat optimizations */
+  @media (max-width: 768px) {
+    /* Ensure proper mobile viewport handling */
+    .chat-messages-container {
+      padding-bottom: 8px;
+    }
+    
+    /* Chat bubbles - prevent paragraph walls */
+    .chat-bubble-mobile {
+      max-width: 88%;
+      word-wrap: break-word;
+      white-space: normal;
+      line-height: 1.5;
+    }
+    
+    /* Improved text rendering */
+    .chat-message-content {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      hyphens: auto;
+    }
+  }
+
+  /* Better touch scrolling for mobile chat */
+  .scroll-smooth-mobile {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
+  }
+
+  /* Fix for mobile browser address bar */
+  @supports (height: 100dvh) {
+    .h-screen-safe {
+      height: 100dvh;
+    }
+    
+    .chat-layout-mobile {
+      height: 100dvh;
+    }
+  }
+
+  /* Fallback for older browsers */
+  @supports not (height: 100dvh) {
+    .chat-layout-mobile {
+      height: calc(var(--vh, 1vh) * 100);
+    }
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  .overflow-x-clip {
+    overflow-x: clip;
+  }
+}
