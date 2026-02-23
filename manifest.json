@@ -1,0 +1,21 @@
+{
+  "name": "CoreAI",
+  "short_name": "CoreAI",
+  "description": "AI Chat Application with Camera Support",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "permissions": [
+    "camera",
+    "storage"
+  ],
+  "orientation": "portrait"
+}
