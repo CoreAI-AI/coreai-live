@@ -1,0 +1,23 @@
+
+{
+  "name": "CoreAI",
+  "short_name": "CoreAI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}icon.png public/icon.png <link rel="manifest" href="/manifest.json"> git add .
+git commit -m "added android app support"
+git push https://coreai-live.vercel.app
